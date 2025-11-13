@@ -1,4 +1,4 @@
-# 📘 Kantine – Bedienungsanleitungen (Offline-HTML-Viewer)
+# 📘 Bedienungsanleitungen Dashboard (Offline-HTML-Viewer)
 
 Eine moderne, vollständig offline-fähige HTML-Anwendung zur Verwaltung, Strukturierung und Anzeige von **Bedienungsanleitungen (PDFs)** – ideal für Kantinen, Werkstätten und Arbeitsplätze ohne Serverrechte oder Internetverbindung.
 
@@ -12,7 +12,7 @@ Eine moderne, vollständig offline-fähige HTML-Anwendung zur Verwaltung, Strukt
 - **Drag & Drop** zum Hinzufügen neuer PDFs  
 - **Bearbeiten & Löschen** von Einträgen  
 - **Import/Export** über JSON  
-- **Automatisches Laden** einer *kantine_data.json* beim Start  
+- **Automatisches Laden** einer *data.json* beim Start  
 - **Statischer HTML-Generator** für feste, klickbare Links  
 - **Saubere Trennung von Daten und Darstellung**
 
@@ -23,10 +23,10 @@ Eine moderne, vollständig offline-fähige HTML-Anwendung zur Verwaltung, Strukt
 ```
 kantine/
 ├── index.html              # Hauptanwendung
-├── kantine_data.json       # Wird beim Start automatisch geladen
+├── data.json       # Wird beim Start automatisch geladen
 └── files/                  # Ordner für alle PDFs
-    ├── Kaffeemaschine.pdf
-    ├── Spülmaschine.pdf
+    ├── JSKE327.pdf
+    ├── JDk832.pdf
     └── ...
 ```
 
@@ -39,7 +39,7 @@ kantine/
 ### 1. Projekt öffnen
 1. Repository herunterladen oder klonen  
 2. **index.html** im Browser öffnen (Chrome empfohlen)  
-3. Wenn eine `kantine_data.json` vorhanden ist, wird diese  
+3. Wenn eine `data.json` vorhanden ist, wird diese  
    **automatisch geladen** und alle gespeicherten Anleitungen erscheinen sofort.
 
 ---
@@ -74,7 +74,7 @@ Pro Anleitung kannst du einstellen:
 | Feld | Bedeutung |
 |------|-----------|
 | **Titel** | Der angezeigte Name in der Übersicht |
-| **Pfad** | Relativer Speicherort, z. B. `files/Kaffeemaschine/Jura.pdf` |
+| **Pfad** | Relativer Speicherort, z. B. `files/Jura.pdf` |
 | **Kategorie** | Themenbereich (mit Autovervollständigung) |
 
 ### 🔹 Einträge löschen
@@ -85,7 +85,7 @@ Einfach **„Löschen“** drücken.
 ## 📤 Export / 📥 Import
 
 ### Exportieren
-Speichert alle Einträge als **kantine_data.json**
+Speichert alle Einträge als **data.json**
 
 ### Importieren
 Beliebige zuvor exportierte Datei auswählen →  
@@ -93,11 +93,11 @@ Alle Einträge werden sofort übernommen.
 
 ---
 
-## 🛠 Automatisches Laden der `kantine_data.json`
+## 🛠 Automatisches Laden der `data.json`
 
 Wenn kein localStorage vorhanden ist:
 
-- lädt die App automatisch `kantine_data.json`
+- lädt die App automatisch `data.json`
 - übernimmt **Titel**, **Pfade**, **Kategorien**
 
 Ideal für Terminals oder PC-Arbeitsplätze.
@@ -144,7 +144,7 @@ Diese Version enthält **nur noch die Links**, ohne Verwaltungsoberfläche.
 → Pfad prüfen: `files/...`
 
 **Keine Anleitungen sichtbar?**  
-→ `kantine_data.json` fehlt oder ist leer
+→ `data.json` fehlt oder ist leer
 
 **Kann ich das Projekt auf mehrere PCs kopieren?**  
 → Ja. Einfach den gesamten Ordner kopieren.
